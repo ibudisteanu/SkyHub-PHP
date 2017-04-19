@@ -32,6 +32,8 @@ class Voting_controller extends MY_Controller
 
         $this->data['sVotingStyleClass'] = $sVotingStyleClass;
 
+        if (get_class($objVote->hierarchyParent) == 'Topic_model') $objVote->sGrandParentObjectId = $objVote->sParentId;
+
         return $this->renderModuleView('voting_view',$this->data,$bHide);
     }
 
@@ -50,6 +52,9 @@ class Voting_controller extends MY_Controller
             $this->data['sVoteIdName'] = 'vote555';
 
         $this->data['sVotingStyleClass'] = $sVotingStyleClass;
+
+
+        if (get_class($objVote->hierarchyParent) == 'Topic_model') $objVote->sGrandParentObjectId = $objVote->sParentObjectId;
 
         return $this->renderModuleView('voting_view',$this->data,$bHide);
     }
