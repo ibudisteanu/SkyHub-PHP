@@ -34,7 +34,6 @@ class Topic_model extends MY_Hierarchy_page_cached_model
         //$this->FeaturesSubChildren = ["Name"=>"Topics","Array"=>"arrChildrenTopics"];
         parent::__construct($bEnableChildren, $hierarchyGrandParent, $hierarchyParent, $bCreateVisitorsStatistics, $bCreateVoting, $bEnableMaterializedParents, $bEnableRepliesComponent, $bEnableImagesComponent);
 
-        if ($this->sTitle == '') $this->sTitle='NO TITLE';
         if ($this->sShortDescription == '') $this->sShortDescription ='NO DESCRIPTION';
 
         $this->initDB('ForumTopics',TUserRole::notLogged, TUserRole::notLogged, TUserRole::User, TUserRole::User);
@@ -123,6 +122,9 @@ class Topic_model extends MY_Hierarchy_page_cached_model
         else $this->sShortDescription = '';
 
         if (isset($p['AddInfo'])) $this->arrAdditionalInfo = $p['AddInfo'];
+
+        if (isset($this->objVote))
+            $this->objVote->sGrandParentObjectId = $this->sID;
     }
 
     protected function serializeProperties()

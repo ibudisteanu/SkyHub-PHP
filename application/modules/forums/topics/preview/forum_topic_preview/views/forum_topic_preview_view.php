@@ -4,6 +4,7 @@
 
         <div id="TopicSubmissionForm_<?=$dtTopicPreview->sID?>" class="anchor" > </div>
 
+
         <?=$this->VotingController->renderVoting($dtTopicPreview->objVote,true,'voting-topic-preview-question')?>
 
         <div id="TopicBody_<?=$dtTopicPreview->sID?>" class="anchor" style="padding-left:42px">

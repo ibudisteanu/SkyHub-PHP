@@ -39,8 +39,7 @@ class Voting_controller extends MY_Controller
     {
         if ($objVote == null)
         {
-            echo 'no vote';
-            return;
+            throw new Exception('no voting object');
         }
 
         if (($objVote != null) && (!is_string($objVote)) && (get_class($objVote)=='Vote_model'))
@@ -52,7 +51,7 @@ class Voting_controller extends MY_Controller
 
         $this->data['sVotingStyleClass'] = $sVotingStyleClass;
 
-        return $this->load->view('voting/voting_view',$this->data,$bHide);
+        return $this->renderModuleView('voting_view',$this->data,$bHide);
     }
 
 }
