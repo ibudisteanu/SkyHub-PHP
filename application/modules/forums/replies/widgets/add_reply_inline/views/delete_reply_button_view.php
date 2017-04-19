@@ -1,0 +1,1 @@
+<a id="deleteReplyButton_<?=$replyObjectId?>" class="btn btn-danger btn-circle" onClick="deleteReplyClick(this,'<?=$replyObjectTitle?>','<?=$replyObjectId?>','<?=$replyGrandFatherObjectId?>')"><i class="fa fa-ban btn-circle-icon"  aria-hidden="true"></i></a>

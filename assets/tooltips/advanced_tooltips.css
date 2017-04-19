@@ -1,0 +1,38 @@
+/* Styles for custom tooltip template */
+.tooltip-head{
+    color: #fff;
+    background: #000;
+    padding: 10px 10px 5px;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+    margin-bottom: -2px; /* Hide default tooltip rounded corner from top */
+}
+.tooltip-head .glyphicon{
+    font-size: 22px;
+    vertical-align: bottom;
+    padding-right: 5px;
+    border-bottom: black 2px;
+}
+.tooltip-head h3{
+    margin: 0;
+    font-size: 18px;
+}
+.tooltip-error{
+    background: #ff0000;
+}
+.tooltip-error a{
+    color: yellow;
+}
+.tooltip-success{
+    color: white;
+    background: #4CAF50
+}
+.tooltip-info{
+    color: white;
+    background: #5bc0de
+}
+
+.tooltip-inner, .tooltip-head
+{
+    max-width: 300px;
+}

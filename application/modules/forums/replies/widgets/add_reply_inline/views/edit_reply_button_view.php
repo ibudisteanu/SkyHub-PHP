@@ -1,0 +1,1 @@
+<a id="editReplyButton_<?=$replyParentObjectId?>" class="btn btn-warning btn-circle" onClick="editReplyClick(this,'<?=$replyParentObjectTitle?>','<?=$replyParentObjectId?>','<?=$replyGrandFatherObjectId?>','edit-reply')"><i class="fa fa-pencil btn-circle-icon" aria-hidden="true"></i></a>

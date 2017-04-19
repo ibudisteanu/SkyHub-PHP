@@ -1,0 +1,63 @@
+To DOs:
+
+1. Policies to enable twitter to give me the email address using OAuth1
+    Twitter Console is called Twitter Application Management
+2. Change the logos
+3. Reddit OAuth2
+
+
+Add Topic cat mai stimplu posibil
+
+
+
+
+Topic Title sa fie optional:
+
+Notification no link:
+
+4. procesare de text pentru imagini, video,
+5. pooluri
+6. uploadare de fisiere
+7 refactorizare texteditor
+8. search
+9. albume
+10. vieweruri
+11. lista de prieteni
+12. Get Location from User ---- pin pe google maps unde e utilizatorul
+
+13. google docs pentru documente nepublic
+14. streaming video
+15. filtrare dupa localizare - regionalizare
+
+16. scoate, reclame de pe home,
+17. memiu stanga cu optiuni de creeaza forumuri, topicuri, etc... chestii in meniu
+
+
+18. Butoane de share pt Facebook, Twitter,
+
+bug list:
+
+cand dai sign out dintr-un cont de facebook nu face
+Inregistrarea clasica
+
+
+Algoritmul de ordonare:
+
+----- 1. Activitatile mele (dupa clickuri) combinat cu 2.
+----- 2. Cele mai populare discutii
+
+Deci
+
+creez doua tabele noi:
+
+1. Cele mai populare mesaje
+2. Cele mai noi mesaje
+
+Pt (1) si (2) efectiv cand se face un eveniment (vot), (discutie) etc.. se recalculeaza coeficientul de la (1) si (2) si se pune in fata tuturor celorlalte topicuri populare sau noi din fiecate SiteCategoryMaterializat
+
+Rezultatul va fi un merge intre (1) (2) si (3)
+
+3. Mesaje din categoriile care imi plac mie
+
+position operator to specify where u want to insert in the mongodb
+https://docs.mongodb.com/manual/reference/operator/update/position/

@@ -1,0 +1,1 @@
+createNewChatWithAuthor("586cd001f23ffebda58b4569",0);

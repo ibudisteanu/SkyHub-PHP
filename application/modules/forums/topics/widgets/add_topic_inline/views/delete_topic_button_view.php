@@ -1,0 +1,1 @@
+<a id="btTopicDelete<?=$sTopicId?>" class="btn btn-danger btn-circle" onClick='deleteTopicClick("<?=$sTopicId?>","<?=$sTopicTitle?>")'><i class="fa fa-ban aria-hidden btn-circle-icon" aria-hidden="true"></i></a>
