@@ -63,8 +63,8 @@ function refreshTotalNewNotifications(iNewValueNotifications)
 function openNotificationsWindow($object)
 {
     /*$object = $($object);
-    if ($object.attr('aria-expanded')=='true')
-        refreshTotalNewNotifications(0);*/
+     if ($object.attr('aria-expanded')=='true')
+     refreshTotalNewNotifications(0);*/
     viewedNewerNotifications();
 }
 

@@ -33,32 +33,31 @@ class App_resources extends MX_Controller
 
         switch ($sPage)
         {
-            case 'login-validation.js':
+            case 'login-validation.js':  //min-js
                 return $this->load->view('auth_site/js/login_validation.js.php');
 
-            case 'registration-validation.js':
+            case 'registration-validation.js': //min-js
                 return $this->load->view('auth_site/js/registration_validation.js.php');
 
             case 'reply-inline-functions.js':
                 return $this->load->view('add_reply_inline/js/reply-inline-functions.js.php');
 
-            case 'add-edit-forum-topic-functions.js':
+            case 'add-edit-forum-topic-functions.js': //min-js
                 return $this->load->view('add_topic/js/add-edit-forum-topic-functions.js.php');
 
-            case 'topic-inline-functions.js':
+            case 'topic-inline-functions.js':  //min-js
                 return $this->load->view('add_topic_inline/js/topic-inline-functions.js.php');
 
-            case 'login-popup-authentication.js':
+            case 'login-popup-authentication.js': //min-js
                 return $this->load->view('popup_auth/js/popup_authentication.js');
 
-            case 'infinite-scroll-content-loader.js':
+            case 'infinite-scroll-content-loader.js': //min-js
                 return $this->load->view('content_loader/js/infiniteScrollContentLoader.js.php');
 
-            case "notifications-loader.js":
-                $data['iLastNotificationDateSec'] = (int)$sParam1;
+            case "notifications-loader.js": //min-js
                 return $this->load->view('user_notifications/js/notifications_loader.js.php', $data);
 
-            case 'vote-functions.js':
+            case 'vote-functions.js'://min-js
                 return $this->load->view('voting/js/voting-functions.js.php');
 
             /*case 'replies-functions.js':

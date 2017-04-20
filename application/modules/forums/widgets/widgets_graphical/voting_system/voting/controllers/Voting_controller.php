@@ -15,7 +15,7 @@ class Voting_controller extends MY_Controller
     public function initializeVotingScript()
     {
         $this->includeWebPageLibraries('voting');
-        $this->BottomScriptsContainer->addScriptResFile(base_url(defined('WEBSITE_OFFLINE') ? "app/res/js/vote-functions.js" : "assets/min-js/voting-functions-min.js"));
+        $this->BottomScriptsContainer->addScriptResFile(base_url(defined('WEBSITE_OFFLINE') ? "app/res/js/vote-functions.js" : "assets/min-js/vote-functions-min.js"));
     }
 
     public function renderVotingById($sParentObjectId='', $bHide=true, $sVotingStyleClass='')

@@ -95,7 +95,8 @@ class Notifications_controller extends MY_Controller
 
     public function renderNotificationsLoader($iLastNotificationDateSec=0)
     {
-        $this->BottomScriptsContainer->addScriptResFile(base_url("app/res/js/notifications-loader.js/".$iLastNotificationDateSec));
+        $this->BottomScriptsContainer->addScriptResFile(base_url(defined(WEBSITE_OFFLINE) ? "app/res/js/notifications-loader.js" : "assets/min-js/notifications-loader-min.js"));
+        $this->BottomScriptsContainer->addScript("initializeNewerUserNotifications($iLastNotificationDateSec)", TRUE);
     }
 
 }
