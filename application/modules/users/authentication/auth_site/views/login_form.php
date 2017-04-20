@@ -1,4 +1,4 @@
-<form id="loginform"  class="form-horizontal" action="<?= base_url('/login#Login');?>" role="form" OnSubmit="return validateLoginFormPost<?=$iLoginNo?>();" method="post">
+<form id="loginform"  class="form-horizontal" action="<?= base_url('/login#Login');?>" role="form" OnSubmit="return validateLoginFormPost(this,<?=$iLoginNo?>);" method="post">
 
 
     <?php
@@ -10,13 +10,13 @@
     <div class="form-group has-feedback" style="margin: 0px !important;">
         <div class="input-group" style="margin-bottom: 15px" >
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="login-username<?=$iLoginNo?>" type="text" class="form-control" name="login-username" value="<?=isset($_POST['login-username'])?$_POST['login-username']:''?>"  placeholder="username or email" OnKeyUp="validateLoginForm<?=$iLoginNo?>(this)" OnMouseDown="validateLoginForm<?=$iLoginNo?>(this)">
+            <input id="login-username<?=$iLoginNo?>" type="text" class="form-control" name="login-username" value="<?=isset($_POST['login-username'])?$_POST['login-username']:''?>"  placeholder="username or email" OnKeyUp="validateLoginForm(this,<?=$iLoginNo?>)" OnMouseDown="validateLoginForm(this, <?=$iLoginNo?>)">
             <i  id="login-username<?=$iLoginNo?>-feedback" class="form-control-feedback"></i>
         </div>
 
         <div class="input-group" style="margin-bottom: 15px">
             <span class="input-group-addon"><i class="fa fa-key"></i></span>
-            <input id="login-password<?=$iLoginNo?>" type="password" class="form-control" name="login-password" placeholder="password" OnKeyUp="validateLoginForm<?=$iLoginNo?>(this)" OnMouseDown="validateLoginForm<?=$iLoginNo?>(this)">
+            <input id="login-password<?=$iLoginNo?>" type="password" class="form-control" name="login-password" placeholder="password" OnKeyUp="validateLoginForm(this,<?=$iLoginNo?>)" OnMouseDown="validateLoginForm(this,<?=$iLoginNo?>)">
             <i  id="login-password<?=$iLoginNo?>-feedback" class="form-control-feedback"></i>
         </div>
     </div>
@@ -63,4 +63,4 @@
     ?>
 </form>
 
-<?php  $this->BottomScriptsContainer->addScriptResFile(base_url("app/res/js/login-validation.js/$iLoginNo"));  ?>
+<?php  $this->BottomScriptsContainer->addScriptResFile(base_url( defined(WEBSITE_OFFLINE) ? "app/res/js/login-validation.js" : 'assets/min-js/login-validation-min.js'));  ?>

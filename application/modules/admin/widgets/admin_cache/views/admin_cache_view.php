@@ -21,7 +21,7 @@
             <a href="<?=base_url("admin/apps/clear-cache")?>"><button type="button" class="btn bg-maroon btn-flat margin"><i class="fa fa-cubes"></i> Clear Cache</button></a>
         </div>
 
-        <form id="loginform"  class="form-horizontal" action="<?= base_url('admin/apps/clean-cache');?>" role="form" OnSubmit="return validateLoginFormPost();" method="post">
+        <form id="loginform"  class="form-horizontal" action="<?= base_url('admin/apps/clean-cache');?>" role="form" method="post">
             <div class="col-md-8">
                 <div class="form-group">
                     <select class="form-control" name="cleanCacheActionName">

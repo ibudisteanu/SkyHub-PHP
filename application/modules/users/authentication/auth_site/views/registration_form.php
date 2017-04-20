@@ -9,7 +9,7 @@
         <div class="col-sm-5">
             <div style="margin-bottom: 15px" class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="register-username<?=$iRegistrationNo?>" type="text" class="form-control" name="register-username" value="<?=isset($_POST['register-username'])?$_POST['register-username']:''?>"  placeholder="username" OnKeyUp="validateRegistrationForm<?=$iRegistrationNo?>(this)"  >
+                <input id="register-username<?=$iRegistrationNo?>" type="text" class="form-control" name="register-username" value="<?=isset($_POST['register-username'])?$_POST['register-username']:''?>"  placeholder="username" OnKeyUp="validateRegistrationForm(this,<?=$iRegistrationNo?>)"  >
                 <i  id="register-username<?=$iRegistrationNo?>-feedback" class="form-control-feedback"></i>
             </div>
         </div>
@@ -17,7 +17,7 @@
         <div class="col-sm-7">
             <div style="margin-bottom: 15px" class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                <input id="register-email<?=$iRegistrationNo?>" type="text" class="form-control" name="register-email" value="<?=isset($_POST['register-email'])?$_POST['register-email']:''?>" placeholder="email" OnKeyUp="validateRegistrationForm<?=$iRegistrationNo?>(this)" >
+                <input id="register-email<?=$iRegistrationNo?>" type="text" class="form-control" name="register-email" value="<?=isset($_POST['register-email'])?$_POST['register-email']:''?>" placeholder="email" OnKeyUp="validateRegistrationForm(this,<?=$iRegistrationNo?>)" >
                 <i  id="register-email<?=$iRegistrationNo?>-feedback" class="form-control-feedback"></i>
             </div>
         </div>
@@ -28,7 +28,7 @@
         <div class="col-sm-6">
             <div style="margin-bottom: 15px" class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-                <input id="register-firstName<?=$iRegistrationNo?>" type="text" class="form-control" name="register-firstName" value="<?=isset($_POST['register-firstName'])?$_POST['register-firstName']:''?>"  placeholder="First Name" OnKeyUp="validateRegistrationForm<?=$iRegistrationNo?>(this)">
+                <input id="register-firstName<?=$iRegistrationNo?>" type="text" class="form-control" name="register-firstName" value="<?=isset($_POST['register-firstName'])?$_POST['register-firstName']:''?>"  placeholder="First Name" OnKeyUp="validateRegistrationForm(this,<?=$iRegistrationNo?>)">
                 <i  id="register-firstName<?=$iRegistrationNo?>-feedback" class="form-control-feedback"></i>
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="col-sm-6">
             <div style="margin-bottom: 15px" class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-bold"></i></span>
-                <input id="register-lastName<?=$iRegistrationNo?>" type="text" class="form-control" name="register-lastName" value="<?=isset($_POST['register-lastName'])?$_POST['register-lastName']:''?>"  placeholder="Last Name" OnKeyUp="validateRegistrationForm<?=$iRegistrationNo?>(this)" >
+                <input id="register-lastName<?=$iRegistrationNo?>" type="text" class="form-control" name="register-lastName" value="<?=isset($_POST['register-lastName'])?$_POST['register-lastName']:''?>"  placeholder="Last Name" OnKeyUp="validateRegistrationForm(this,<?=$iRegistrationNo?>)" >
                 <i  id="register-lastName<?=$iRegistrationNo?>-feedback" class="form-control-feedback"></i>
             </div>
         </div>
@@ -48,14 +48,14 @@
             <div style="margin-bottom: 15px;" class="input-group">
 
                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                <input id="register-password<?=$iRegistrationNo?>" type="password" class="form-control" name="register-password" placeholder="password" OnKeyUp="validateRegistrationForm<?=$iRegistrationNo?>(this)">
+                <input id="register-password<?=$iRegistrationNo?>" type="password" class="form-control" name="register-password" placeholder="password" OnKeyUp="validateRegistrationForm(this, <?=$iRegistrationNo?>)">
                 <i  id="register-password<?=$iRegistrationNo?>-feedback" class="form-control-feedback"></i>
             </div>
         </div>
         <div class="col-sm-6" >
             <div style="margin-bottom: 15px;" class="input-group">
                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                <input id="register-passwordConfirmation<?=$iRegistrationNo?>" type="password" class="form-control" name="register-passwordConfirmation" placeholder="retype password" OnKeyUp="validateRegistrationForm<?=$iRegistrationNo?>(this)">
+                <input id="register-passwordConfirmation<?=$iRegistrationNo?>" type="password" class="form-control" name="register-passwordConfirmation" placeholder="retype password" OnKeyUp="validateRegistrationForm(this, <?=$iRegistrationNo?>)">
                 <i id="register-passwordConfirmation<?=$iRegistrationNo?>-feedback" class="form-control-feedback"></i>
             </div>
         </div>
@@ -65,13 +65,13 @@
         <div class="col-sm-6" >
             <div style="margin-bottom: 15px;" class="input-group">
                 <span class="input-group-addon"><i class="fa fa-institution"></i></span>
-                <input id="register-city<?=$iRegistrationNo?>" type="text" class="form-control" name="register-city" value="<?=isset($sRegisterCityPlaceHolder) ? $sRegisterCityPlaceHolder : 'San Francisco'?>" value="<?=isset($_POST['register-city'])?$_POST['register-city']:''?>"  OnKeyUp="validateRegistrationForm<?=$iRegistrationNo?>(this)">
+                <input id="register-city<?=$iRegistrationNo?>" type="text" class="form-control" name="register-city" value="<?=isset($sRegisterCityPlaceHolder) ? $sRegisterCityPlaceHolder : 'San Francisco'?>" value="<?=isset($_POST['register-city'])?$_POST['register-city']:''?>"  OnKeyUp="validateRegistrationForm(this, <?=$iRegistrationNo?>)">
                 <i id="register-city<?=$iRegistrationNo?>-feedback" class="form-control-feedback"></i>
             </div>
         </div>
         <div class="col-sm-6" >
             <div class="form-item" style="text-align: left;  ">
-                <input id="register-countrySelectorCode<?=$iRegistrationNo?>" type="text" name="register-country" style="width: 100%" OnKeyUp="validateRegistrationForm<?=$iRegistrationNo?>(this)">
+                <input id="register-countrySelectorCode<?=$iRegistrationNo?>" type="text" name="register-country" style="width: 100%" OnKeyUp="validateRegistrationForm(this, <?=$iRegistrationNo?>)">
                 <label for="register-countrySelectorCode<?=$iRegistrationNo?>" style="display:none;">Select a country here...</label>
                 <i id="register-countrySelectorCode<?=$iRegistrationNo?>-feedback"  class="form-control-feedback" style="margin-right: 0 !important;"></i>
             </div>
@@ -86,7 +86,7 @@
     <input type="hidden" name="val" value="register">
 
     <div class="form-group" style="text-align: center">
-            <button type="submit" id="register-submitButton" OnClick="return validateRegistrationFormPost<?=$iRegistrationNo?>();" class="btn btn-success" >
+            <button type="submit" id="register-submitButton" OnClick="return validateRegistrationFormPost(this, <?=$iRegistrationNo?>);" class="btn btn-success" >
                 <i class="fa fa-sign-in"></i> Register
             </button>
 
@@ -119,5 +119,5 @@
     "preferredCountries: ['ca', 'gb', 'us'".((isset($_POST['register-country'])&&(!in_array($_POST['register-country'],['ca', 'gb', 'us']))) ? ",'".$_POST['register-country']."'":'')."]
     }); ",true);
 
-    $this->BottomScriptsContainer->addScriptResFile(base_url("app/res/js/registration-validation.js/$iRegistrationNo"));
+    $this->BottomScriptsContainer->addScriptResFile(base_url(defined(WEBSITE_OFFLINE) ? "app/res/js/registration-validation.js" : 'assets/min-js/registration-validation-min.js'));
 ?>

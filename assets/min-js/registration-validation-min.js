@@ -68,29 +68,29 @@ function validateRegistrationForm(object, iRegistrationNo, bTimeOut, bHideToolTi
             if (!bError)
             {
                 $.ajax(
-                {
-                    url: document.location.origin+'/api/users/post/registration/check-used-email',
-                    type: 'post',
-                    data: { Email: sValue},
-                    success: function( outputJSONData )
                     {
-                        var outputData = $.parseJSON(outputJSONData);
+                        url: document.location.origin+'/api/users/post/registration/check-used-email',
+                        type: 'post',
+                        data: { Email: sValue},
+                        success: function( outputJSONData )
+                        {
+                            var outputData = $.parseJSON(outputJSONData);
 
-                        if (outputData.result == false){ // successfully - valid email
-                            hideToolTip($("#" + sId));
-                            //processValidation(sId,true,outputData.message,'tooltip-success',"Valid Email","top",true,false,false,3000,true);
+                            if (outputData.result == false){ // successfully - valid email
+                                hideToolTip($("#" + sId));
+                                //processValidation(sId,true,outputData.message,'tooltip-success',"Valid Email","top",true,false,false,3000,true);
+                            }
+                            else {//email already used
+                                if (outputData.rejected == true){
+                                    //processValidation(sId,true,outputData.message,'tooltip-info',"Couldn't validate it","top",true,false,false,3000,true);
+                                } else
+                                    processValidation(sId,true,outputData.message,'tooltip-error',"Email already Used","top",true,false,false,3000,true);
+                            }
+                        },
+                        error: function() {
+                            //processValidation(sId,true,"An error has encounter checking your email address for duplication",'tooltip-error',"Email Internal Error","top",true,false,false,3000,true);
                         }
-                        else {//email already used
-                            if (outputData.rejected == true){
-                                //processValidation(sId,true,outputData.message,'tooltip-info',"Couldn't validate it","top",true,false,false,3000,true);
-                            } else
-                                processValidation(sId,true,outputData.message,'tooltip-error',"Email already Used","top",true,false,false,3000,true);
-                        }
-                    },
-                    error: function() {
-                        //processValidation(sId,true,"An error has encounter checking your email address for duplication",'tooltip-error',"Email Internal Error","top",true,false,false,3000,true);
-                    }
-                });
+                    });
             }
             break;
         case 'register-firstName':

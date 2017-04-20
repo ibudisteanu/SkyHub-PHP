@@ -34,12 +34,10 @@ class App_resources extends MX_Controller
         switch ($sPage)
         {
             case 'login-validation.js':
-                $data['iLoginNo'] = (int)$sParam1;
-                return $this->load->view('auth_site/js/login_validation.js.php',$data);
+                return $this->load->view('auth_site/js/login_validation.js.php');
 
             case 'registration-validation.js':
-                $data['iRegistrationNo'] = (int)$sParam1;
-                return $this->load->view('auth_site/js/registration_validation.js.php',$data);
+                return $this->load->view('auth_site/js/registration_validation.js.php');
 
             case 'reply-inline-functions.js':
                 return $this->load->view('add_reply_inline/js/reply-inline-functions.js.php');
