@@ -1,4 +1,4 @@
-var iLastNotificationDateSec = 0;
+var iLastNotificationDateSec = -1000;
 
 function initializeNewerUserNotifications(iLastNotificationDateSecParam){
     iLastNotificationDateSec = iLastNotificationDateSecParam;
@@ -6,6 +6,8 @@ function initializeNewerUserNotifications(iLastNotificationDateSecParam){
 
 function getNewerUserNotifications()
 {
+    if (iLastNotificationDateSec === -1000) return ;
+
     $.ajax(
         {
             url: document.location.origin+"/api/notifications/post/get-newer-notifications/",

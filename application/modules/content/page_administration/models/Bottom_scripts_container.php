@@ -11,7 +11,7 @@ class Bottom_scripts_container extends CI_Model
         parent::__construct();
     }
 
-    public function addScript($sText, $bAddScriptTag=false, $sScriptName='none')
+    public function addScript($sText, $bAddScriptTag=false, $sScriptName='none',  $bFirst=false)
     {
         if (strlen($sText) > 0)
         {
@@ -22,12 +22,16 @@ class Bottom_scripts_container extends CI_Model
                     $sText = '<script type="text/javascript">'.$sText."</script>";
 
                 $ScriptObject = new Bottom_script_object($sText,$sScriptName);
-                array_push($this->arrContent,$ScriptObject);
+
+                if ($bFirst)
+                    array_unshift($this->arrContent, $ScriptObject);
+                else
+                   array_push($this->arrContent,$ScriptObject);
             }
         }
     }
 
-    public function addScriptResFile($sFileLocation, $sScriptName='none')
+    public function addScriptResFile($sFileLocation, $sScriptName='none', $bFirst=false)
     {
         if (strlen($sFileLocation) > 0)
         {
@@ -37,7 +41,11 @@ class Bottom_scripts_container extends CI_Model
             if (!$this->checkScriptAlreadyExists($sText))
             {
                 $ScriptObject = new Bottom_script_object($sText, $sScriptName);
-                array_push($this->arrContent,$ScriptObject);
+
+                if ($bFirst)
+                    array_unshift($this->arrContent, $ScriptObject);
+                else
+                    array_push($this->arrContent,$ScriptObject);
             }
         }
     }
