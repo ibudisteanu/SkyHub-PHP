@@ -138,7 +138,7 @@ class Topic_model extends MY_Hierarchy_page_cached_model
             $arrResult = array_merge($arrResult, array("BodyCode"=>$this->sBodyCode));
         }
 
-        if ((isset($this->sTitle)) && ($this->sTitle!='NO TITLE')) $arrResult = array_merge($arrResult, array("Title"=>$this->sTitle));
+        if ((isset($this->sTitle))) $arrResult = array_merge($arrResult, array("Title"=>$this->sTitle));
 
         if (isset($this->sSiteCategoryParents))
             $arrResult = array_merge($arrResult, array("SiteCatParents"=>$this->sSiteCategoryParents));
@@ -289,7 +289,7 @@ class Topic_model extends MY_Hierarchy_page_cached_model
         //show with a probability last topics I have also commented on
 
         $iPublicCoefficient +=  100*$this->objRepliesComponent->iNoReplies  + 200*$this->objRepliesComponent->iNoUsersReplies;
-        $iPublicCoefficient += 10*count($this->objVote->arrVotes);
+        $iPublicCoefficient += 50*$this->objVote->iVoteCountValue;
         //$iPublicCoefficient += 3*$this->objVisitorsStatistics->getNumberViews() + $this->objVisitorsStatistics->getNumberSeen();
         $iPublicCoefficient += $this->objVisitorsStatistics->getNumberViews()/3 + $this->objVisitorsStatistics->getNumberSeen()/6;
 

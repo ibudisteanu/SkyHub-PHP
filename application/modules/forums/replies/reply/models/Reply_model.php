@@ -25,8 +25,6 @@ class Reply_model extends MY_Hierarchy_page_model
 
         $this->initDB('Replies', TUserRole::notLogged, TUserRole::User, TUserRole::Admin, TUserRole::SuperAdmin);
 
-        if (!isset($this->sTitle)) $this->sTitle='No title';
-
         $this->load->library('StringEmojisProcessing',null,'StringEmojisProcessing');
     }
 
