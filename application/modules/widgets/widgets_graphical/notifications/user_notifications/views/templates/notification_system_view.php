@@ -10,6 +10,6 @@
 
             <small><span class="time" data-toggle="tooltip" data-placement="left"  title="<?=$dtCreationDateFullDateTime?>"><i class="fa fa-clock-o"></i> <?=$this->TimeLibrary->getTimeDifferenceDateAndNowString($dtCreationDate)?></span></small>
         </h4>
-        <p class="wrapword"><?=$this->StringsAdvanced->closeTags(substr($sText,0,250))?></p>
+        <p class="wrapword"><?=$this->StringsAdvanced->closeTags(strip_tags(substr($sText,0,250),'<b><i><img>'))?></p>
     </a>
 </li>
