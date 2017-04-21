@@ -20,6 +20,8 @@ class Home extends MY_Controller
 
     public function index ($iPageIndex=0)
     {
+        //$this->output->enable_profiler(TRUE);
+
         if (!$this->MyUser->bLogged)
         {
             $this->homeNotLogged($iPageIndex);

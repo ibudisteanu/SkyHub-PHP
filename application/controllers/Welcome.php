@@ -20,11 +20,15 @@ class Welcome extends MY_Controller {
 	 */
 	public function index()
 	{
+        $this->output->enable_profiler(TRUE);
+
 		$this->load->view('welcome_message');
 	}
 
 	public function index2()
 	{
+        $this->output->enable_profiler(TRUE);
+
 		echo APPPATH;
 		//modules::load('pages/home')->index();
 		modules::load('pages/Home')->index();

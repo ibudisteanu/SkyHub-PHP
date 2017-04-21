@@ -2,7 +2,7 @@
 
 class Query_trials extends MY_Model
 {
-    public $sError;
+       public $sError;
     public $iAttemptsRemaining;
     public $iAttempts;
 

@@ -15,19 +15,20 @@ class MongoConnection
 
         if (MongoConnection::$dbMongo == null)
         {
-            $options = array("connectTimeoutMS" => 30000, "replicaSet" => "replicaSetName");
+            $options = array("connectTimeoutMS" => 30000, 'connect' => true,  'readPreference' => 'primary');
 
             try
             {
+
                 //Localhost database
                 if (defined('DATABASE_OFFLINE'))
                 {
-                    MongoConnection::$dbMongo = new MongoClient();
+                    MongoConnection::$dbMongo = new MongoClient('127.0.0.1',$options);
                     MongoConnection::$sMongoDataBaseName = LOCAL_MONGODB_DB_NAME;
                 } else
                 {
                     //online database
-                    MongoConnection::$dbMongo = new MongoClient("mongodb://".REMOTE_MONGODB_USERNAME.":".REMOTE_MONGODB_PASSWORD."@".REMOTE_MONGODB_REMOTE_ADDRESS.":".REMOTE_MONGODB_PORT."/".REMOTE_MONGODB_DB_NAME);
+                    MongoConnection::$dbMongo = new MongoClient("mongodb://".REMOTE_MONGODB_USERNAME.":".REMOTE_MONGODB_PASSWORD."@".REMOTE_MONGODB_REMOTE_ADDRESS.":".REMOTE_MONGODB_PORT."/".REMOTE_MONGODB_DB_NAME,$options);
                     MongoConnection::$sMongoDataBaseName = REMOTE_MONGODB_DB_NAME;
                 }
 
@@ -89,5 +90,6 @@ class MongoConnection
 
 function shutdownMongoConnections()
 {
-    MongoConnection::$dbMongo->close();
+    if (MongoConnection::$dbMongo != null)
+        MongoConnection::$dbMongo->close();
 }
