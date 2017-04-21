@@ -63,4 +63,4 @@
     ?>
 </form>
 
-<?php  $this->BottomScriptsContainer->addScriptResFile(base_url( defined(WEBSITE_OFFLINE) ? "app/res/js/login-validation.js" : 'assets/min-js/login-validation-min.js'));  ?>
+<?php  $this->BottomScriptsContainer->addScriptResFile(base_url( defined('WEBSITE_OFFLINE') ? "app/res/js/login-validation.js" : 'assets/min-js/login-validation-min.js'));  ?>

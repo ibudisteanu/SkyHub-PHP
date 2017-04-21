@@ -119,5 +119,5 @@
     "preferredCountries: ['ca', 'gb', 'us'".((isset($_POST['register-country'])&&(!in_array($_POST['register-country'],['ca', 'gb', 'us']))) ? ",'".$_POST['register-country']."'":'')."]
     }); ",true);
 
-    $this->BottomScriptsContainer->addScriptResFile(base_url(defined(WEBSITE_OFFLINE) ? "app/res/js/registration-validation.js" : 'assets/min-js/registration-validation-min.js'));
+    $this->BottomScriptsContainer->addScriptResFile(base_url(defined('WEBSITE_OFFLINE') ? "app/res/js/registration-validation.js" : 'assets/min-js/registration-validation-min.js'));
 ?>

@@ -55,7 +55,7 @@ class App_resources extends MX_Controller
                 return $this->load->view('content_loader/js/infiniteScrollContentLoader.js.php');
 
             case "notifications-loader.js": //min-js
-                return $this->load->view('user_notifications/js/notifications_loader.js.php', $data);
+                return $this->load->view('user_notifications/js/notifications_loader.js.php');
 
             case 'vote-functions.js'://min-js
                 return $this->load->view('voting/js/voting-functions.js.php');

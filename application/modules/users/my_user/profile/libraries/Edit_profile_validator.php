@@ -10,8 +10,6 @@ class Edit_profile_validator extends Validator
 
         $this->Users=$Users;
         $this->sFormName='editProfile';
-
-        $this->load->library('StringsAdvanced',null,'StringsAdvanced');
     }
 
     /*public function EditProfileValidator()
