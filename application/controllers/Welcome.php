@@ -18,9 +18,28 @@ class Welcome extends MY_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	function testReturn()
+    {
+        $s = '';
+        for ($i=0; $i<100000; $i++)
+            $s .= "HELLO MY DEAR FRIEND $i cool awesome ";
+
+        return $s;
+    }
+
+    function testEcho()
+    {
+        for ($i=0; $i<100000; $i++)
+            echo "HELLO MY DEAR FRIEND $i cool awesome ";
+    }
+
 	public function index()
 	{
         $this->output->enable_profiler(TRUE);
+
+        //echo $this->testReturn();
+        $this->testEcho();
 
 		$this->load->view('welcome_message');
 	}

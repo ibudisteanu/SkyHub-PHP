@@ -39,6 +39,7 @@ class View_topic extends  MY_Controller
         $string = $this->URI->arrFormParam[count($this->URI->arrFormParam)-1];
 
         //echo 'action'.$string;
+        //$this->output->enable_profiler(TRUE);
 
         if ($string == 'edit-topic') $this->URI->sFormAction = array_pop($this->URI->arrFormParam); else
         if ($string == 'delete-topic') $this->URI->sFormAction = array_pop($this->URI->arrFormParam);

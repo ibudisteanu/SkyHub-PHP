@@ -19,7 +19,7 @@ class Order_coefficient extends CI_Model
 
             //$this->iHotnessCoefficient = log( max($this->iPublicCoefficient,1),10) + $sign*($mongoDate->sec - strtotime("2016-05-15 00:00:00"))/30500;
             //$this->iHotnessCoefficient = $this->iPublicCoefficient + $sign*($mongoDate->sec - strtotime("2016-05-15 00:00:00"))/50500; //PREVIOUS ONLINE
-            $this->iHotnessCoefficient = $this->iPublicCoefficient + $sign*($mongoDate->sec - strtotime("2016-05-15 00:00:00"))/20500; //PREVIOUS ONLINE
+            $this->iHotnessCoefficient = $this->iPublicCoefficient + $sign*($mongoDate->sec - strtotime("2016-05-15 00:00:00"))/8500; //PREVIOUS ONLINE
         }
     }
 

@@ -36,13 +36,13 @@ class Infinite_scroll_content_loader extends  MY_Controller
                 $sReturn .= $this->renderModuleView('infinite_scroll_content_loader_view.php', $data, true);
         }
 
+        $this->BottomScriptsContainer->addScriptResFile(base_url(defined('WEBSITE_OFFLINE') ? "app/res/js/infinite-scroll-content-loader.js" : 'assets/min-js/infinite-scroll-content-loader-min.js'), 'none', $bFirst = false);
+
         if ($bHasNext) {
             $sReturn .= modules::load('pagination/pagination')->renderPagination($iIndex = $iOriginalPageIndex, $sPaginationSuffix = $sPaginationSuffix, $bShowScrollPaginationButtons, false);
 
             $this->executeNormal($sInfiniteScrollContainerName, $bEnableInfiniteScroll, $sParentId, $iPageIndex, $iPageElementsCount, $bHasNext, $arrInfiniteScrollDisplayContentType, $sInfiniteScrollActionName);
         }
-
-        $this->BottomScriptsContainer->addScriptResFile(base_url(defined('WEBSITE_OFFLINE') ? "app/res/js/infinite-scroll-content-loader.js" : 'assets/min-js/infinite-scroll-content-loader-min.js'), 'none', true);
 
         if (!$bEcho) return $sReturn;
         else {
@@ -62,7 +62,7 @@ class Infinite_scroll_content_loader extends  MY_Controller
         $data['bEnableInfiniteScroll'] = $bEnableInfiniteScroll;
         $data['arrInfiniteScrollDisplayContentType'] = $arrInfiniteScrollDisplayContentType;
 
-        $this->BottomScriptsContainer->addScript($this->renderModuleView('js/initializeInfiniteScrollContentLoader.js.php',$data,true),true,'none',true);
+        $this->BottomScriptsContainer->addScript($this->renderModuleView('js/initializeInfiniteScrollContentLoader.js.php',$data,true),true,'none', $bFirst = false);
 
     }
 }
